@@ -59,9 +59,13 @@ dependencies {
     // Koin
     implementation(platform("io.insert-koin:koin-bom:3.5.6"))
     implementation("io.insert-koin:koin-core") // Core
+    implementation("io.insert-koin:koin-test")
 
     // SQLDeLight para SQLite
     implementation("app.cash.sqldelight:sqlite-driver:2.0.2")
+
+    // Koin tests
+    testImplementation("io.insert-koin:koin-test-junit5")
 }
 
 test {
@@ -83,7 +87,7 @@ jlinkZip {
 // JAR
 jar {
     manifest {
-        attributes 'Main-Class': 'dev.joseluisgs.pokedexfx.ExpedientesApplication'
+        attributes 'Main-Class': 'org.example.dawfilmsinterface.CineApplication'
     }
     from {
         configurations["compileClasspath"].collect { it.isDirectory() ? it : zipTree(it) }
